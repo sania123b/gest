@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestura - Sign Language Sync</title>
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎭 Gestura</h1>
+            <p>Sign Language Video Synchronization</p>
+        </header>
+        
+        <main>
+            <!-- Video ID Input Section -->
+            <section class="input-section">
+                <h3>Enter Video ID</h3>
+                <div class="input-group">
+                    <input type="text" id="videoIdInput" placeholder="Enter Gestura Video ID (e.g., GESTURA-123456)" />
+                    <button id="fetchVideoBtn">Load Sign Video</button>
+                </div>
+            </section>
+
+            <!-- Video Player Section -->
+            <section class="video-section">
+                <div class="video-container">
+                    <video id="sideVideo" controls muted playsinline>
+                        <source id="videoSource" src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                
+                <!-- Status Section - moved here -->
+                <div class="status-section">
+                    <h3>Sync Status</h3>
+                    <div class="status-display">
+                        <span class="status-indicator" id="statusIndicator"></span>
+                        <span id="status">No video detected</span>
+                    </div>
+                    <div class="sync-info" id="syncInfo">
+                        <p>Waiting for YouTube video...</p>
+                    </div>
+                </div>
+                
+                <!-- Video Details Section -->
+                <div class="video-details" id="videoDetails">
+                    <h4>Details</h4>
+                    <div class="details-content" id="videoInfo">
+                        <p>No sign language video loaded</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>

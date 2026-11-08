@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Gestura - Sign Language Video Sync",
+  "version": "1.0",
+  "description": "Synchronizes sign language videos with YouTube content for accessibility",
+  "permissions": ["activeTab", "scripting", "sidePanel", "tabs", "notifications"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png",
+    "default_title": "Gestura Video Sync"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
